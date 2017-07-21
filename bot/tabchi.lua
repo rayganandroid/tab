@@ -476,6 +476,86 @@ end
   end
 
 ------------------------------------
+if is_sudo(msg) then
+        if text == 'bcsgp' and tonumber(msg.reply_to_message_id_) > 0 then
+          function cb(a,b,c)
+          local text = b.content_.text_
+          local list = d:smembers('asgp')
+          for k,v in pairs(list) do
+        tabchi.sendText(v, 0, 1, text,1, 'md')
+          end
+   local gps = d:scard("asgp")     
+     local text = '*Youre Message Was Send To* `'..gps..'`* SuperGroups*'
+       tabchi.sendText(msg.chat_id_, msg.id_, 1, text, 1, 'md')
+          end
+          tabchi.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),cb)
+          end
+
+  if text == 'bcgp' and tonumber(msg.reply_to_message_id_) > 0 then
+          function cb(a,b,c)
+          local text = b.content_.text_
+          local list = d:smembers('agp')
+          for k,v in pairs(list) do
+        tabchi.sendText(v, 0, 1, text,1, 'md')
+          end
+					local gp = d:scard("agp")     
+     local text = '*Youre Message Was Send To* `'..gp..'`* Groups*'
+       tabchi.sendText(msg.chat_id_, msg.id_, 1, text, 1, 'md')		
+          end
+          tabchi.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),cb)
+          end
+  if text == 'bcuser' and tonumber(msg.reply_to_message_id_) > 0 and is_sudo(msg) then
+          function cb(a,b,c)
+          local text = b.content_.text_
+          local list = d:smembers('ausers')
+          for k,v in pairs(list) do
+        tabchi.sendText(v, 0, 1, text,1, 'md')
+          end
+local uu = d:scard("ausers")     
+     local text = '*Youre Message Was Send To* `'..uu..'`* Users*'
+       tabchi.sendText(msg.chat_id_, msg.id_, 1, text, 1, 'md')
+          end
+          tabchi.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),cb)
+          end
+  if text == 'fwdsgp' and tonumber(msg.reply_to_message_id_) > 0 then
+          function cb(a,b,c)
+          local list = d:smembers('asgp')
+          for k,v in pairs(list) do
+         tabchi.forwardMessages(v, msg.chat_id_, {[0] = b.id_}, 1)
+          end
+local gps = d:scard("asgp")     
+     local text = '*Youre Message Was ForWard To* `'..gps..'`* SuperGroups*'
+       tabchi.sendText(msg.chat_id_, msg.id_, 1, text, 1, 'md')
+
+          end
+          tabchi.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),cb)
+          end
+if text == 'fwdgp' and tonumber(msg.reply_to_message_id_) > 0 then
+          function cb(a,b,c)
+          local list = d:smembers('agp')
+          for k,v in pairs(list) do
+         tabchi.forwardMessages(v, msg.chat_id_, {[0] = b.id_}, 1)
+          end
+					local gp = d:scard("agp")     
+     local text = '*Youre Message Was ForWard To* `'..gp..'`* Groups*'
+       tabchi.sendText(msg.chat_id_, msg.id_, 1, text, 1, 'md')
+          end
+          tabchi.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),cb)
+          end
+
+if text == 'fwduser' and tonumber(msg.reply_to_message_id_) > 0 then
+          function cb(a,b,c)
+          local list = d:smembers('ausers')
+          for k,v in pairs(list) do
+         tabchi.forwardMessages(v, msg.chat_id_, {[0] = b.id_}, 1)
+          end
+					local qq = d:scard("ausers")     
+     local text = '*Youre Message Was ForWard To* `'..qq..'`* Users*'
+       tabchi.sendText(msg.chat_id_, msg.id_, 1, text, 1, 'md')
+          end
+          tabchi.getMessage(msg.chat_id_, tonumber(msg.reply_to_message_id_),cb)
+          end
+end	
 ------------------------------------
 d:incr("tallmsg")
 ------------------------------------
