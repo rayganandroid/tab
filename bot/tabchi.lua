@@ -14,7 +14,7 @@ https = require "ssl.https"
 —---~~~~~~~~~~~~~~~~
 d = dofile('./libs/redis.lua')
 —---------------------------—
-config_sudo = {68685903}
+config_sudo = {114900277}
 function dl_cb(arg, data)
 end
 function is_sudo(msg)
