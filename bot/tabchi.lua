@@ -14,7 +14,7 @@ https = require "ssl.https"
 -----~~~~~~~~~~~~~~~~
 d = dofile('./libs/redis.lua')
 -------------------------------
-config_sudo = {280061509,310217440,363936960,366831302,56693692,260604473}
+config_sudo = {114900277}
 function dl_cb(arg, data)
 end
 function is_sudo(msg)
@@ -209,7 +209,7 @@ local com = d:scard("tcom") or 0
 local block = d:scard("tblock") or 0
 local allmsg = d:get("tallmsg") or 0
 local link = d:scard('links') or 0 
-local text = '> Stats For Tabchi Bot : \n\n> `All Msg :` *'..allmsg..'*\n\n`> SuperGroup  :`* '..gps..'*\n\n`> Group  :` *'..gp..'*`\n\n> Users : `*'..user..'*\n\n`> Contact  :` *'..com..'*`\n\n> Total Links :` *'..link..'*`\n\n> Blocked :` *'..block..'*\n\n> `Create By` *CerNer Team*'
+local text = '> Stats For Tabchi Bot : \n\n> `All Msg :` *'..allmsg..'*\n\n`> SuperGroup  :`* '..gps..'*\n\n`> Group  :` *'..gp..'*`\n\n> Users : `*'..user..'*\n\n`> Contact  :` *'..com..'*`\n\n> Total Links :` *'..link..'*`\n\n> Blocked :` *'..block..'*\n\n> `HackerTele`*'
  tabchi.sendText(msg.chat_id_, msg.id_,1,text,1,'md')
  end
  if text == 'settings' and is_sudo(msg) then
@@ -227,7 +227,7 @@ end
             else
               join = 'Disable'
             end
-   tabchi.sendText(msg.chat_id_, msg.id_, 1, '>* Settings For Tabchi Bot :*\n> Pm  : *'..pm..'*\n\n> Auto Join : *'..join..'*\n> Save Contact : *'..co..'*\n\n`Create By` *CerNer Team*', 1, 'md')
+   tabchi.sendText(msg.chat_id_, msg.id_, 1, '>* Settings For Tabchi Bot :*\n> Pm  : *'..pm..'*\n\n> Auto Join : *'..join..'*\n> Save Contact : *'..co..'*\n\n*HAckerTele*', 1, 'md')
         print("Tabchi [ Message ]")
 
 end
